@@ -1,0 +1,22 @@
+@media (max-width: 768px) {
+	.margin-top {
+		margin-top: 8rem !important;
+	}
+	.like {
+		margin-right: 5rem !important;
+		color: rgb(202, 83, 83);
+		opacity: 0.4;
+	}
+	.input {
+		width: 12rem !important;
+	}
+
+	.notification {
+		position: fixed;
+		top: 85vh !important;
+		left: 5vw !important;
+	}
+	.btn-delete {
+		left: 90% !important;
+	}
+}

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="https://bulma.io/vendor/fontawesome-free-5.15.2-web/css/all.min.css">
+    <title>Random Meals</title>
+</head>
+<body>
+
+    <nav class="navbar is-fixed-top nav-color">
+
+        <div class="navbar-brand">
+
+        <img src="./img/comer.svg" style="margin: auto; display: block;" width="75">
+        <a id="web-title" class="title is-size-2-desktop is-size-4-mobile ml-3 animate__animated animate__bounce" style="margin: auto; cursor: pointer;" href="">Random Meals!</a> 
+
+        </div>
+
+        <div id="nav-buttons" class="navbar-end is-align-items-center">
+
+            <a id="login-navbar" class="button is-transparent" href="">Login</a>
+            <a id="signup-navbar" class="button is-transparent ml-3 mr-3" href="">Sign up</a>
+
+        </div>
+
+    </nav>
+
+    <section id="app_container" class="container">
+        <template id="home_render">
+            <div id="home--content" class="margin-top">
+            
+                
+
+                <h1 class="has-text-centered-desktop title mt-6"> Welcome to Random Meals!</h1>
+            
+                <p class="has-text-centered-desktop content">
+                    Here you can find random recipes to liked of not
+                    <br>if you liked a recipe it will save onto your account and you could look up later the recipe! 
+                    <br> 
+                </p>
+        
+                <div class="has-text-centered">
+                        
+                    <button id="home_button" class="button is-info animate__animated animate__pulse" style="animation-iteration-count:infinite;">Start</button>
+        
+                </div>
+
+            </div>
+           </template>
+            
+            <template id="app_render">
+
+                <div id="app_main" class="box app--main margin-top">
+
+               
+        
+                </div>
+            </template>
+    
+            <template id="userHistory_render">
+                <div class="user-like-history">
+                    <div class="history-container margin-top">
+                        <h1 class="title is-size-1-desktop  is-size-4-mobile">Your's Liked Foods </h1>
+                       
+        
+                    </div>
+        
+                </div>
+            </template>
+    
+            <template id="log_render">
+                <div class="form-user">
+                    <form id="iniciarsesion" class="box login">
+                        <div class="p-4">
+                            <h1  class="title  has-text-centered">Log In</h1>
+                            <h2 class="is-size-5">Email</h2>
+                            <div class="control has-icons-left">
+                            <span class="icon is-small is-left">
+                                <i class="fas fa-envelope"></i>
+                             </span>
+                             
+                            <input id="email" class="input" placeholder="Your email here" type="email" minlength="10" maxlength="25">
+
+                            </div>
+                            <p id="emailwarning" class="help is-danger is-hidden" >Something wrong with the email</p>
+
+                            <h2 class="is-size-5">Password</h2>
+                            <div class="control has-icons-left">
+                           
+                            <span class="icon is-small is-left">
+                                <i class="fas fa-key"></i>
+                             </span>
+                            <input id="password" class="input" placeholder="Your password here" type="password" minlength="10" maxlength="25">
+                
+                            </div>
+                            <p id="passwarning" class="help is-danger is-hidden" >The password is non existent</p>
+                            <button type="submit" class="button mt-3 is-info" style="display: block; margin: auto;">Log in</button>
+                            </div>
+                            <div class="has-text-centered"> Dont have an account? <a>Sing up here!</a></div>
+                    </form>
+        
+                </div>
+                <div id="notification-box-error-1" class="notification box error is-hidden"><strong>Email or password incorrect 😥</strong></div>
+                <div id="notification-box-error-2" class="notification box error is-hidden"><strong>Password incorrect 😥</strong></div>
+
+            </template>
+
+            <template id="signup_render">
+                <div class="form-user">
+                    <form id="signup" class="box login">
+                        <div class="p-4">
+                            <h1  class="title  has-text-centered">Sing Up</h1>
+                            <h2 class="is-size-5">Email</h2>
+                            <div class="control has-icons-left">
+                            <span class="icon is-small is-left">
+                                <i class="fas fa-envelope"></i>
+                             </span>
+                             
+                            <input id="email" class="input" placeholder="Your email here" type="email" minlength="10" maxlength="25">
+
+                            </div>
+                            <p id="emailwarning" class="help is-danger is-hidden" >Something wrong with the email</p>
+
+                            <h2 class="is-size-5">Password</h2>
+                            <div class="control has-icons-left">
+                           
+                            <span class="icon is-small is-left">
+                                <i class="fas fa-key"></i>
+                             </span>
+                            <input id="password" class="input" placeholder="Your password here" type="password" minlength="10" maxlength="25">
+                
+                            </div>
+                            <p id="passwarning" class="help is-danger is-hidden" >The password is non existent</p>
+                            <button id="signupbutton" type="submit" class="button mt-3 is-info" style="display: block; margin: auto;">Sign Up</button>
+                            </div>
+                            <div class="has-text-centered"> have an account already? <a>Log in here!</a></div>
+                            
+                    </form>
+                </div>
+                <div id="notification-box-success" class="notification box success is-hidden"><strong>Sign Up was successful 🎉🎉</strong></div>
+                <div id="notification-box-error" class="notification box error is-hidden"><strong>The email is already taken 😥</strong></div>
+
+            </template>
+    </section>
+
+    <div id="templates">
+
+        
+           
+
+    </div>
+
+    
+</body>
+</html>

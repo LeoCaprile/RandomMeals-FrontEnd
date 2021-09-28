@@ -1,0 +1,11 @@
+.modal-image {
+	display: block;
+	margin: auto;
+}
+.modal-card-title {
+	flex-shrink: 1 !important;
+	font-size: 2rem !important;
+}
+.modal__ingredients {
+	margin-left: 2rem;
+}
