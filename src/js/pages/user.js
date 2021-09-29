@@ -47,7 +47,7 @@ const templateHistoryItem = (imgSrc, title, YTSrc, recipe) => {
 
 function deleteUserLike(mealIDtoDelete) {
 	const mealID = mealIDtoDelete;
-	fetch('http://localhost:5000/auth/removeLike', {
+	fetch('https://api-randonmeals.herokuapp.com/auth/removeLike', {
 		method: 'PUT',
 		headers: {
 			'Content-Type': 'application/json',

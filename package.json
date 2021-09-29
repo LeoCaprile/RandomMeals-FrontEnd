@@ -4,15 +4,19 @@
   "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --mode producction",
-    "dev": "webpack --mode development",
-    "start": "webpack serve  --mode development --open"
+    "build": "webpack --mode production",
+    "dev": "webpack serve  --mode development --open",
+    "dev-server": "node server/server.js",
+    "start": "node server/server.js",
+    "heroku-postbuild": "webpack -p"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "animate.css": "^4.1.1",
     "bulma": "^0.9.3",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
     "webpack-cli": "^4.7.2"
   },
   "devDependencies": {
