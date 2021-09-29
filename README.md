@@ -32,7 +32,7 @@ You can see their recipe or a tutorial on how to make the dish on youtube.
 
  1. Git clone to a folder in your computer
  2. npm install, to install all the dependendies.
- 3. npm start, to start the dev server.
+ 3. npm run dev, to start the dev server.
  4. npm build, to build de dist folder.
 
  
