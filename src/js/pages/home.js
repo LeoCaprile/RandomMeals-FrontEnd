@@ -1,5 +1,6 @@
 import { renderContent } from '../..';
 import { renderLogin } from '../user/login';
+
 function homeButtonFunctions() {
 	const homeButton = document.getElementById('home_button');
 

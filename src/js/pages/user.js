@@ -121,10 +121,12 @@ function renderHistoryItems(arrayOfIds) {
 						const recipeID = historyItem.getAttribute('data-id');
 						deleteUserLike(recipeID);
 						historyItem.classList.remove('hover__item');
-						historyItem.classList.add('notification-out');
+						historyItem.classList.add('animate__fadeOutLeft');
+						historyItem.classList.add('animate__animated');
+
 						setTimeout(() => {
 							historyItem.remove();
-						}, 500);
+						}, 800);
 					}
 
 					if (e.target.id == 'view_recipe') {

@@ -28,7 +28,6 @@ const loginButtonFunc = () => {
 		})
 			.then((res) => res.json())
 			.then((res) => {
-				console.log(res);
 				if (!res.success && res.type === 'email or pass') {
 					unHideElement('notification-box-error-1', 2500);
 				} else if (!res.success && res.type === 'pass') {
