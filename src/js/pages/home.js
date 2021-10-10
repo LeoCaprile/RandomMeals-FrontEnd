@@ -17,6 +17,6 @@ function homeButtonFunctions() {
 
 export const renderHome = () => {
 	renderContent('app_container', 'home_render');
-	toggleBlockScrolling(true);
+
 	homeButtonFunctions();
 };

@@ -1,14 +1,15 @@
 import { renderContent, toggleBlockScrolling } from '../..';
+import { navBarOnUserLikes } from '../navbar';
 
-const templateHistoryItem = (imgSrc, title, YTSrc, recipe) => {
+const templateHistoryItem = (imgSrc, title, YTSrc) => {
 	return `
       
-	<div class="columns is-align-items-center box hover__item mt-3 mb-3">
+	<div class="columns item-user-box is-align-items-center box hover__item mt-3 mb-3">
 	<div class="btn-delete delete is-large is-hidden-desktop"></div>
 	<div class="column has-text-centered-mobile is-size-3-desktop is-hidden-desktop has-text-weight-bold">${title}</div>
 
 			<div class="has-text-centered-mobile column is-2">
-				<img src="${imgSrc}" width="100">
+				<img src="${imgSrc}" width="150">
 			</div>
 			<div class="column has-text-centered-mobile is-size-3-desktop is-hidden-mobile has-text-weight-bold">${title}</div>
 			<div class="is-flex is-flex-direction-column">
@@ -31,10 +32,12 @@ const templateHistoryItem = (imgSrc, title, YTSrc, recipe) => {
                         <ul class="modal__ingredients">
                             
                         </ul>
+
                         <h1 class="title ml-2 mt-4">Instructions</h1>
-                        <p>
-						${recipe}
-						</p>
+
+                        <article id="instructions">
+
+						</article>
 
                       </section>
                       <footer class="modal-card-foot">
@@ -44,6 +47,9 @@ const templateHistoryItem = (imgSrc, title, YTSrc, recipe) => {
      </div>
      `;
 };
+
+const templateNoItemsFound = `<i class="far fa-frown fa-5x"></i>
+<h1 class="title"> Nothing in here, go back and give a like to some food</h1>`;
 
 function deleteUserLike(mealIDtoDelete) {
 	const mealID = mealIDtoDelete;
@@ -100,6 +106,17 @@ function addIngredientsAndMeasures(ingredientsData, ulToAppend) {
 function renderHistoryItems(arrayOfIds) {
 	const userHistoryContainer = document.querySelector('.history-container');
 
+	if (arrayOfIds.length <= 0) {
+		return (userHistoryContainer.innerHTML = templateNoItemsFound);
+	}
+
+	const loadingElement = document.createElement('div');
+	loadingElement.setAttribute('class', 'history-container');
+	loadingElement.innerHTML =
+		'<h1 class="titulo is-size-3-mobile is-size-1-desktop">Liked food history!</h1><div class="spinner"><div>';
+
+	userHistoryContainer.append(loadingElement);
+
 	for (let id of arrayOfIds) {
 		fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`, { method: 'GET' })
 			.then((data) => data.json())
@@ -129,6 +146,9 @@ function renderHistoryItems(arrayOfIds) {
 
 						setTimeout(() => {
 							historyItem.remove();
+							userHistoryContainer.children.length === 1
+								? (userHistoryContainer.innerHTML = templateNoItemsFound)
+								: '';
 						}, 800);
 					}
 				});
@@ -145,6 +165,15 @@ function renderHistoryItems(arrayOfIds) {
 					modalBox = historyItem.querySelector('.modal'),
 					viewRecipeBtn = historyItem.querySelector('.view_recipe');
 
+				const instructions = historyItem.querySelector('#instructions');
+				const splitedInstructions = fetchedInstructions.split('.');
+
+				for (let i of splitedInstructions) {
+					const step = document.createElement('p');
+					step.innerText = i;
+					instructions.append(step);
+				}
+
 				viewRecipeBtn.addEventListener('click', () => {
 					modalBox.classList.add('is-active');
 				});
@@ -152,6 +181,9 @@ function renderHistoryItems(arrayOfIds) {
 					modalBox.classList.remove('is-active');
 				});
 				addIngredientsAndMeasures(ingredientObj, ingredientList);
+				const spinner = userHistoryContainer.querySelector('.spinner');
+				spinner !== null ? spinner.remove() : '';
+
 				userHistoryContainer.append(historyItem);
 			});
 	}
@@ -159,6 +191,6 @@ function renderHistoryItems(arrayOfIds) {
 
 export const renderUserPage = () => {
 	renderContent('app_container', 'userHistory_render');
-	toggleBlockScrolling(false);
+	navBarOnUserLikes();
 	fetchingUserLikes();
 };

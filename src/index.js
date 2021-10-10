@@ -12,12 +12,4 @@ export const renderContent = (rootId, contentId) => {
 	document.getElementById(rootId).innerHTML = contentToRender.innerHTML;
 };
 
-export const toggleBlockScrolling = (bool) => {
-	if (bool) {
-		document.documentElement.classList.add('fixed');
-	} else {
-		document.documentElement.classList.remove('fixed');
-	}
-};
-
 userIsLoggedIn();

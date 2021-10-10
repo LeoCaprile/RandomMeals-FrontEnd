@@ -2,6 +2,9 @@
 	.margin-top {
 		margin-top: 6rem !important;
 	}
+	.item-user-box {
+		width: 100vw;
+	}
 	.like {
 		margin-right: 5rem !important;
 		color: rgb(202, 83, 83);
@@ -23,6 +26,10 @@
 	.img-centering {
 		display: block !important;
 		margin: auto !important;
+	}
+	.img-app {
+		height: 300px !important;
+		width: 300px !important;
 	}
 }
 @media (max-width: 360px) {

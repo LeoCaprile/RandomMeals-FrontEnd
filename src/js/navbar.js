@@ -36,6 +36,18 @@ const navLoggedBtnFunctions = () => {
 	});
 };
 
+export const navBarOnUserLikes = () => {
+	const navBar = document.getElementById('nav-buttons');
+	const template = `<a id="gotoapp-navbar" class="button is-hidden-mobile is-info" href="">Go to app</a>
+    <a id="logout-navbar" class="button is-hidden-mobile is-info ml-3 mr-3" href="">Log out</a>`;
+
+	navBar.innerHTML = template;
+
+	const goToAppBtn = document.getElementById('gotoapp-navbar');
+
+	goToAppBtn.addEventListener('click', renderApp);
+};
+
 export const navbarOnUserLoged = () => {
 	const navTitle = document.getElementById('web-title');
 	const navBar = document.getElementById('nav-buttons');

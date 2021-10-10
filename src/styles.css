@@ -7,10 +7,14 @@
 	--success-color: #00ff005e;
 	--error-color: #ff00005e;
 }
-.fixed {
-	margin: 0;
-	height: 100%;
-	overflow: hidden;
+
+.spinner {
+	width: 45px;
+	height: 45px;
+	border-radius: 50%;
+	border: solid 10px #d0daec83;
+	border-left: solid 10px rgba(0, 0, 0, 0);
+	animation: rotate 1s linear infinite;
 }
 
 .container {
