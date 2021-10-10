@@ -42,10 +42,14 @@ export const navBarOnUserLikes = () => {
     <a id="logout-navbar" class="button is-hidden-mobile is-info ml-3 mr-3" href="">Log out</a>`;
 
 	navBar.innerHTML = template;
-
+	const logoutBtn = document.getElementById('logout-navbar');
 	const goToAppBtn = document.getElementById('gotoapp-navbar');
 
 	goToAppBtn.addEventListener('click', renderApp);
+	logoutBtn.addEventListener('click', () => {
+		localStorage.removeItem('token');
+		navLogoutBtnFunction();
+	});
 };
 
 export const navbarOnUserLoged = () => {
