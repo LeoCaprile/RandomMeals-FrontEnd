@@ -33,6 +33,7 @@ const loginButtonFunc = () => {
 				} else if (!res.success && res.type === 'pass') {
 					unHideElement('notification-box-error-2', 2500);
 				} else {
+					unHideElement('notification-box-success-1', 4000);
 					localStorage.setItem('token', res.token);
 					userIsLoggedIn();
 				}

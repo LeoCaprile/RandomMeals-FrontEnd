@@ -14,32 +14,41 @@
 
         <div class="navbar-brand">
 
-        <img src="./img/comer.svg" style="margin: auto; display: block;" width="75">
+        <img src="./img/comer.svg" width="75">
         <a id="web-title" class="title is-size-2-desktop is-size-4-mobile ml-3 animate__animated animate__bounce" style="margin: auto; cursor: pointer;" href="">Random Meals!</a> 
 
+        <div class="navbar-burger is-hidden-desktop" style="align-self:center; display:grid; justify-content: center; align-items: center;">
+            <i class="fas fa-user fa-2x"></i>
         </div>
-
-        <div id="nav-buttons" class="navbar-end is-align-items-center">
-
-            <a id="login-navbar" class="button is-transparent" href="">Login</a>
-            <a id="signup-navbar" class="button is-transparent ml-3 mr-3" href="">Sign up</a>
-
+        
+        
         </div>
+        
+        <div id="nav-buttons" class="navbar-end has-text-centered is-align-self-center">
+
+            <a id="login-navbar" class="button is-info is-hidden-mobile" href="">Login</a>
+            <a id="signup-navbar" class="button is-info ml-3 mr-3 is-hidden-mobile" href="">Sign up</a>
+            
+        </div>
+        
+
+        
+        
+
 
     </nav>
 
-    <section id="app_container" class="container">
+    <section id="app_container" class=" container">
         <template id="home_render">
-            <div class="margin-top home--content">
-            
-                
 
-                <h1 class="has-text-centered-desktop title is-size-1 mt-6"> Welcome to Random Meals!</h1>
-                
-                <div class="columns mt-6">
-                    <img class="img-app animate__animated animate__backInDown" src="https://www.themealdb.com/images/media/meals/ssxvup1511387476.jpg" alt="food">
+            <div class="center-div margin-top home--content">
 
-                    <p class="column is-align-self-center has-text-centered is-size-2 animate__animated animate__backInDown">
+                <h1 class=" has-text-centered title is-size-1-desktop is-size-3-mobile"> Welcome to Random Meals!</h1>
+                
+                <div class="columns mt-3">
+                    <img class="animate__animated animate__backInDown img-centering" src="https://www.themealdb.com/images/media/meals/ssxvup1511387476.jpg" style="border-radius: 2rem;" width="300" alt="food">
+
+                    <p class="column is-align-self-center has-text-centered is-size-3-desktop is-size-5-mobile animate__animated animate__backInDown">
                         Here you can find random recipes to liked or not,
                         <br>if you liked a recipe it will save onto your account
                         <br>and you could look up later!
@@ -50,7 +59,7 @@
                 </div>
                 <div class="has-text-centered">
                             
-                    <button id="home_button" class="button is-size-1 is-info animate__animated animate__pulse" style="animation-iteration-count:infinite;">Start</button>
+                    <button id="home_button" class="button is-size-3 is-info animate__animated animate__pulse" style="animation-iteration-count:infinite;">Start</button>
         
                 </div>
 
@@ -88,7 +97,7 @@
                                 <i class="fas fa-envelope"></i>
                              </span>
                              
-                            <input id="email" class="input" placeholder="Your email here" type="email" minlength="10" maxlength="25">
+                            <input id="email" class="input" placeholder="Your email here" type="email" minlength="10" maxlength="40">
 
                             </div>
                             <p id="emailwarning" class="help is-danger is-hidden" >Something wrong with the email</p>
@@ -99,7 +108,7 @@
                             <span class="icon is-small is-left">
                                 <i class="fas fa-key"></i>
                              </span>
-                            <input id="password" class="input" placeholder="Your password here" type="password" minlength="10" maxlength="25">
+                            <input id="password" class="input" placeholder="Your password here" type="password" minlength="10" maxlength="40">
                 
                             </div>
                             <p id="passwarning" class="help is-danger is-hidden" >The password is non existent</p>
@@ -109,9 +118,8 @@
                     </form>
         
                 </div>
-                <div id="notification-box-error-1" class="notification box error is-hidden"><strong>Email or password incorrect 😥</strong></div>
-                <div id="notification-box-error-2" class="notification box error is-hidden"><strong>Password incorrect 😥</strong></div>
-
+               
+                
             </template>
 
             <template id="signup_render">
@@ -125,7 +133,7 @@
                                 <i class="fas fa-envelope"></i>
                              </span>
                              
-                            <input id="email" class="input" placeholder="Your email here" type="email" minlength="10" maxlength="25">
+                            <input id="email" class="input" placeholder="Your email here" type="email" minlength="10" maxlength="40">
 
                             </div>
                             <p id="emailwarning" class="help is-danger is-hidden" >Something wrong with the email</p>
@@ -136,7 +144,7 @@
                             <span class="icon is-small is-left">
                                 <i class="fas fa-key"></i>
                              </span>
-                            <input id="password" class="input" placeholder="Your password here" type="password" minlength="10" maxlength="25">
+                            <input id="password" class="input" placeholder="Your password here" type="password" minlength="10" maxlength="40">
                 
                             </div>
                             <p id="passwarning" class="help is-danger is-hidden" >The password is non existent</p>
@@ -146,19 +154,16 @@
                             
                     </form>
                 </div>
-                <div id="notification-box-success" class="notification box success is-hidden"><strong>Sign Up was successful 🎉🎉</strong></div>
-                <div id="notification-box-error" class="notification box error is-hidden"><strong>The email is already taken 😥</strong></div>
+                
 
             </template>
     </section>
 
-    <div id="templates">
-
-        
-           
-
-    </div>
-
+    <div id="notification-box-success-1" class="notification box success is-hidden"><strong>You logged correctly 🎉</strong></div>
+    <div id="notification-box-error-1" class="notification box error is-hidden"><strong>Email or password incorrect 😥</strong></div>
+    <div id="notification-box-error-2" class="notification box error is-hidden"><strong>Password incorrect 😥</strong></div>
+    <div id="notification-box-success" class="notification box success is-hidden"><strong>Sign Up was successful 🎉🎉</strong></div>
+    <div id="notification-box-error" class="notification box error is-hidden"><strong>The email is already taken 😥</strong></div>
     
 </body>
 </html>

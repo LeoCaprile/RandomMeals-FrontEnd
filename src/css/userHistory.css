@@ -1,8 +1,3 @@
-.hover__item:hover {
-	box-shadow: 0 0.5em 1em -0.125em rgb(2 1 1 / 30%), 0 0 0 1px rgb(10 10 10 / 2%);
-	transform: scale(1.05);
-}
-
 .box {
 	transition: all ease-in-out 0.18s;
 }

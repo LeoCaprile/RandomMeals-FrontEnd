@@ -20,10 +20,11 @@ const signUpButtonFunc = () => {
 		})
 			.then((res) => res.json())
 			.then((res) => {
-				if (res.error) {
-					unHideElement('notification-box-error', 2500);
+				if (res.success) {
+					unHideElement('notification-box-success', 3000);
+					console.log(res);
 				} else {
-					unHideElement('notification-box-success', 2500);
+					unHideElement('notification-box-error', 2500);
 				}
 			});
 	};

@@ -1,4 +1,4 @@
-import { renderContent } from '../..';
+import { renderContent, toggleBlockScrolling } from '../..';
 
 const templateHistoryItem = (imgSrc, title, YTSrc, recipe) => {
 	return `
@@ -15,7 +15,7 @@ const templateHistoryItem = (imgSrc, title, YTSrc, recipe) => {
 				<a target="__blank" href="${YTSrc}" class="button has-text-weight-bold">View Youtube Tutorial</a>
 				<a  class="button view_recipe has-text-weight-bold">View Recipe</a>
 			</div>
-		<div id="btn_delete" class="btn-delete delete is-large is-hidden-mobile"></div>
+		<div  class="btn-delete delete is-large is-hidden-mobile"></div>
 </div>
 
 <div class="modal">
@@ -117,19 +117,19 @@ function renderHistoryItems(arrayOfIds) {
 				historyItem.setAttribute('data-id', fetchedFoodID);
 
 				historyItem.addEventListener('click', (e) => {
-					if (e.target.id == 'btn_delete') {
+					const btnDelete = e.target.classList.contains('btn-delete');
+					const itemClass = historyItem.classList;
+					if (btnDelete) {
 						const recipeID = historyItem.getAttribute('data-id');
 						deleteUserLike(recipeID);
-						historyItem.classList.remove('hover__item');
-						historyItem.classList.add('animate__fadeOutLeft');
-						historyItem.classList.add('animate__animated');
+
+						itemClass.remove('hover__item');
+						itemClass.add('animate__fadeOutLeft');
+						itemClass.add('animate__animated');
 
 						setTimeout(() => {
 							historyItem.remove();
 						}, 800);
-					}
-
-					if (e.target.id == 'view_recipe') {
 					}
 				});
 
@@ -159,5 +159,6 @@ function renderHistoryItems(arrayOfIds) {
 
 export const renderUserPage = () => {
 	renderContent('app_container', 'userHistory_render');
+	toggleBlockScrolling(false);
 	fetchingUserLikes();
 };

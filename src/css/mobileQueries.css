@@ -1,6 +1,6 @@
 @media (max-width: 768px) {
 	.margin-top {
-		margin-top: 8rem !important;
+		margin-top: 6rem !important;
 	}
 	.like {
 		margin-right: 5rem !important;
@@ -18,5 +18,15 @@
 	}
 	.btn-delete {
 		left: 90% !important;
+	}
+
+	.img-centering {
+		display: block !important;
+		margin: auto !important;
+	}
+}
+@media (max-width: 360px) {
+	.margin-top {
+		margin-top: 5rem !important;
 	}
 }

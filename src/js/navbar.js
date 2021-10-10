@@ -15,6 +15,7 @@ const navLogoutBtnFunction = () => {
     <a id="login-navbar" class="button is-info" href="">Login</a>
     <a id="signup-navbar" class="button is-info ml-3 mr-3" href="">Sign up</a>
     `;
+
 	navBar.innerHTML = template;
 	navTitle.removeEventListener('click', renderApp);
 	renderHome();
@@ -38,8 +39,8 @@ const navLoggedBtnFunctions = () => {
 export const navbarOnUserLoged = () => {
 	const navTitle = document.getElementById('web-title');
 	const navBar = document.getElementById('nav-buttons');
-	const template = `<a id="user-navbar" class="button is-info" href="">My account</a>
-    <a id="logout-navbar" class="button is-info ml-3 mr-3" href="">Log out</a>`;
+	const template = `<a id="user-navbar" class="button is-hidden-mobile is-info" href="">User Likes</a>
+    <a id="logout-navbar" class="button is-hidden-mobile is-info ml-3 mr-3" href="">Log out</a>`;
 
 	navBar.innerHTML = template;
 

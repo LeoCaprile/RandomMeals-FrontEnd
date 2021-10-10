@@ -7,6 +7,21 @@
 	--success-color: #00ff005e;
 	--error-color: #ff00005e;
 }
+.fixed {
+	margin: 0;
+	height: 100%;
+	overflow: hidden;
+}
+
+.container {
+	height: 100vh;
+}
+
+.center-div {
+	display: grid;
+	justify-content: center;
+	align-items: center;
+}
 
 li {
 	list-style-type: disc;
